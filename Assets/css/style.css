@@ -1,0 +1,8 @@
+.app-menu__icon{
+    font-size: 14px !important;
+}
+
+.tile-footer{
+    display: flex;
+    align-content: space-between;
+}
