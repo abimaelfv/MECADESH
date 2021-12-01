@@ -25,6 +25,6 @@
           </ul>
         </li>
         
-        <li><a class="app-menu__item" href="<?= base_url(); ?>/logout"><i class="app-menu__icon fas fa-power-off"></i><span class="app-menu__label">Cerrar Cesion</span></a></li>
+        <li><a class="app-menu__item" href="<?= base_url(); ?>/logout"><i class="app-menu__icon fas fa-power-off"></i><span class="app-menu__label">Cerrar sesión</span></a></li>
       </ul>
     </aside>
