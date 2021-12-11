@@ -2,6 +2,14 @@
 
 class Conexion{
 
+    /* 
+        private $host = 'localhost';
+    private $database = 'id18072345_mecadesh';
+    private $username = 'id18072345_abi';
+    private $password = '74937272>Abi';
+    private $charset = 'utf8';
+    */
+
     private $host = 'localhost';
     private $database = 'mecadesh2';
     private $username = 'root';

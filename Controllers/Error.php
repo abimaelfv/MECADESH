@@ -3,6 +3,11 @@
 class Fail extends Controllers{
     public function __construct(){
         parent:: __construct();
+
+        session_start(); 
+        if (empty($_SESSION['session'])) {
+            header('location: '.base_url().'/login');
+        }
     }
 
     public function notFound(){

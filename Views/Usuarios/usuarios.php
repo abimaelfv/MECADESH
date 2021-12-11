@@ -1,13 +1,16 @@
 <?php 
   include_once 'Views/Template/header-admin.php';
   getModal('modalUsuarios',$data);
+  // dep($_SESSION['permisosMod']);
 ?>
-    <main class="app-content">
+  <main class="app-content">
       <div class="app-title">
         <div>
           <h1>
             <i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
-            <button class="btn btn-primary btn-sm" type="button"  onclick="openModal();"> Nuevo</button>
+            <?php if($_SESSION['permisosMod']['w']){ ?> <!-- denegar acceso a escribir -->
+              <button class="btn btn-primary btn-sm" type="button"  onclick="openModal();"> Nuevo</button>
+            <?php } ?>
           </h1>
           <p>Start a beautiful journey here</p>
         </div>
@@ -25,24 +28,17 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>NOMBRES</th>
-                                <th>APELLIDOS</th>
-                                <th>EMAIL</th>
-                                <th>TELÉFONO</th>
-                                <th>ROL</th>
-                                <th>STATUS</th>
-                                <th>ACCIONES</th>
+                                <th>DNI</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Teléfono</th>
+                                <th>Provincia</th>
+                                <th>Rol</th>
+                                <th>Status</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>1</td>
-                            <td>Carlos</td>
-                            <td>Fernadez Ventura</td>
-                            <td>29abimael@gmail.com</td>
-                            <td>925257563</td>
-                            <td>Admin</td>
-                            <td>Activo</td>
-                            <td></td>
                         </tbody>
                     </table>
                 </div>

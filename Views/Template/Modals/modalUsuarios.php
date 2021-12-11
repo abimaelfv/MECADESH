@@ -9,58 +9,56 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="formUsuario" name="formUsuario" >
+        <form id="formUsuario" name="formUsuario" class="form-horizontal">
             <input type="hidden" name="idUsuario" id="idUsuario" value="">
-            <p class="text-primary">Todos los campos son obligatorios.</p>
+            <p class="text-primary" id="txtMensaje">Todos los campos son obligatorios.</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="DNI">DNI</label>
-                    <input class="form-control" type="text" name="DNI" id="DNI" placeholder="Documento de Identidad" required>
+                    <label for="txtIdentificacion">DNI</label>
+                    <input class="form-control valid validNumber" type="text" name="txtIdentificacion" id="txtIdentificacion" placeholder="Documento de Identidad" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="rolID">Tipo de Usuario</label>
-                    <select class="form-control" name="rolID" id="rolID" required>
-                        <option values="1">Admin</option>
-                        <option values="0">Cajero</option>
+                    <label for="txtRolid">Tipo de Usuario</label>
+                    <select class="form-control" data-live-search="true" name="txtRolid" id="txtRolid" required>
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="nombre">Nombres</label>
-                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre Completo" required>
+                    <label for="txtName">Nombres</label>
+                    <input class="form-control valid validText" type="text" name="txtName" id="txtName" placeholder="Nombre Completo" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="apellido">Apellidos</label>
-                    <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido Completo" required>
+                    <label for="txtApellido">Apellidos</label>
+                    <input class="form-control valid validText" type="text" name="txtApellido" id="txtApellido" placeholder="Apellido Completo" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="correo">Correo</label>
-                    <input class="form-control" type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
+                    <label for="txtEmail">Correo</label>
+                    <input class="form-control valid validEmail" type="email" name="txtEmail" id="txtEmail" placeholder="Correo Electronico" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="telefono">Teléfono</label>
-                    <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Número de Telefono" required>
+                    <label for="txtTelefono">Teléfono</label>
+                    <input class="form-control valid validNumber" type="text" name="txtTelefono" id="txtTelefono" placeholder="Número de Telefono" required onKeypress="return controlTag(event);">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="provincia">Provincia</label>
-                    <select class="form-control" name="provincia" id="provincia" required>
-                        <option values="1">Huanuco</option>
-                        <option values="0">Lima</option>
+                    <label for="txtProvincia">Provincia</label>
+                    <select class="form-control" data-live-search="true" name="txtProvincia" id="txtProvincia" required>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="genero">Genero</label>
-                    <select class="form-control" name="genero" id="genero" required>
-                        <option values="1">Masculino</option>
-                        <option values="0">Femenino</option>
+                    <label for="txtGenero">Genero</label>
+                    <select class="form-control selectpicker" name="txtGenero" id="txtGenero" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
                     </select>
                 </div>
             </div>
+
+            <div class="nuevorow"></div>
 
             <div class="tile-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
@@ -69,6 +67,70 @@
         </form>
 
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalViewUser" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header header-primary">
+        <h5 class="modal-title" id="titleModal">Datos del Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-button">
+            <tbody>
+                <tr>
+                    <td>Identificasion:</td>
+                    <td id="celIdentificacion">56235412</td>
+                </tr>
+                <tr>
+                    <td>Nombres:</td>
+                    <td id="celNombre">Abimael</td>
+                </tr>
+                <tr>
+                    <td>Apellidos:</td>
+                    <td id="celApellido">Fernadez Ventura</td>
+                </tr>
+                <tr>
+                    <td>Teléfono:</td>
+                    <td id="celTelefono">215463258</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td id="celEmail">29abimael@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Provincia:</td>
+                    <td id="celProvincia">Huanuco</td>
+                </tr>
+                <tr>
+                    <td>Genero:</td>
+                    <td id="celGenero">M</td>
+                </tr>
+                <tr>
+                    <td>Tipo Usuario:</td>
+                    <td id="celTipoUsuario">Administrador</td>
+                </tr>
+                <tr>
+                    <td>Estado:</td>
+                    <td id="celEstado">Activo</td>
+                </tr>
+                <tr>
+                    <td>Fecha de registro:</td>
+                    <td id="celFechaRegistro">2020/11/15 12:25:20</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
+        </div>
     </div>
   </div>
 </div>
